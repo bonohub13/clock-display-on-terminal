@@ -3,7 +3,9 @@
 #include <ctime>
 #include <thread>
 #include <chrono>
+#include "../include/display_time.hpp"
 
+#if 0
 class DisplayTime
 {
 public:
@@ -14,6 +16,7 @@ public:
 private:
 	std::time_t current_time;
 };
+#endif
 DisplayTime::DisplayTime()
 	: current_time(std::time(nullptr))
 {}
@@ -32,10 +35,4 @@ std::string DisplayTime::current_time_getter()
 	current_time = std::time(nullptr);
 
 	return (std::string)(std::asctime(std::localtime(&current_time)));
-}
-
-int main()
-{
-	DisplayTime time;
-	time.run();
 }
